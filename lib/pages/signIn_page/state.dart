@@ -6,4 +6,6 @@ class LoginPageState {
 
   var email = TextEditingController();
   var password = TextEditingController();
+
+  var isLoading = false.obs;
 }

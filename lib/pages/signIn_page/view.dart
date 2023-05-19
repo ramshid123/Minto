@@ -22,83 +22,93 @@ class LoginPage extends GetView<LoginPageController> {
           child: SingleChildScrollView(
             child: Form(
               key: controller.state.formkey,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  SizedBox(height: 50),
-                  Image.asset(
-                    'assets/ic_launcher.png',
-                    height: 250,
-                    width: 250,
-                  ),
-                  Text(
-                    'Minto',
-                    style: TextStyle(
-                      fontSize: 50,
-                      color: ColorConstants.whiteColor,
-                      fontWeight: FontWeight.bold,
+              child: Obx(() {
+                return Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    SizedBox(height: 50),
+                    Image.asset(
+                      'assets/ic_launcher.png',
+                      height: 250,
+                      width: 250,
                     ),
-                  ),
-                  Text(
-                    'Taste with comfort',
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: ColorConstants.whiteColor,
-                      fontWeight: FontWeight.normal,
-                    ),
-                  ),
-                  SizedBox(height: 40),
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: Text(
-                      'Sign In',
+                    Text(
+                      'Minto',
                       style: TextStyle(
-                        fontSize: 30,
-                        color: ColorConstants.whiteColor.withOpacity(0.8),
-                        fontWeight: FontWeight.w300,
-                      ),
-                    ),
-                  ),
-                  SizedBox(height: 20),
-                  KLoginTextForm('Email', controller.state.email),
-                  SizedBox(height: 10),
-                  KLoginTextForm('Password', controller.state.password),
-                  SizedBox(height: 40),
-                  ElevatedButton(
-                    onPressed: () async => controller.login(),
-                    child: Text(
-                      'Login',
-                      style: TextStyle(
-                        color: ColorConstants.blackColor,
-                        fontSize: 28,
+                        fontSize: 50,
+                        color: ColorConstants.whiteColor,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    style: ElevatedButton.styleFrom(
-                        fixedSize: Size(Get.width / 2, 70),
-                        backgroundColor: ColorConstants.yellowColor,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20))),
-                  ),
-                  SizedBox(height: 20),
-                  Text.rich(TextSpan(
-                      text: 'Are you new here? ',
+                    Text(
+                      'Taste with comfort',
                       style: TextStyle(
+                        fontSize: 20,
                         color: ColorConstants.whiteColor,
+                        fontWeight: FontWeight.normal,
                       ),
-                      children: [
-                        TextSpan(
-                            text: 'Register',
-                            recognizer: TapGestureRecognizer()
-                              ..onTap = () =>
-                                  Get.offAllNamed(AppRouteNames.SIGN_UP_PAGE),
-                            style: TextStyle(
+                    ),
+                    SizedBox(height: 40),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        'Sign In',
+                        style: TextStyle(
+                          fontSize: 30,
+                          color: ColorConstants.whiteColor.withOpacity(0.8),
+                          fontWeight: FontWeight.w300,
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 20),
+                    KLoginTextForm('Email', controller.state.email),
+                    SizedBox(height: 10),
+                    KLoginTextForm('Password', controller.state.password),
+                    SizedBox(height: 40),
+                    controller.state.isLoading.value
+                        ? SizedBox(
+                            height: 70,
+                            width: 70,
+                            child: CircularProgressIndicator(
                               color: ColorConstants.yellowColor,
-                            ))
-                      ])),
-                  SizedBox(height: 20),
-                ],
-              ),
+                            ),
+                          )
+                        : ElevatedButton(
+                            onPressed: () async => controller.login(),
+                            child: Text(
+                              'Login',
+                              style: TextStyle(
+                                color: ColorConstants.blackColor,
+                                fontSize: 28,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            style: ElevatedButton.styleFrom(
+                                fixedSize: Size(Get.width / 2, 70),
+                                backgroundColor: ColorConstants.yellowColor,
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20))),
+                          ),
+                    SizedBox(height: 20),
+                    Text.rich(TextSpan(
+                        text: 'Are you new here? ',
+                        style: TextStyle(
+                          color: ColorConstants.whiteColor,
+                        ),
+                        children: [
+                          TextSpan(
+                              text: 'Register',
+                              recognizer: TapGestureRecognizer()
+                                ..onTap = () =>
+                                    Get.offAllNamed(AppRouteNames.SIGN_UP_PAGE),
+                              style: TextStyle(
+                                color: ColorConstants.yellowColor,
+                              ))
+                        ])),
+                    SizedBox(height: 20),
+                  ],
+                );
+              }),
             ),
           ),
         ),

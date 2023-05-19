@@ -22,85 +22,95 @@ class SignUpPage extends GetView<SignUpPageController> {
           child: SingleChildScrollView(
             child: Form(
               key: controller.state.formkey,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  SizedBox(height: 35),
+              child: Obx(() {
+                return Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    SizedBox(height: 35),
                     Image.asset(
-                    'assets/ic_launcher.png',
-                    height: 250,
-                    width: 250,
-                  ),
-                  Text(
-                    'Minto',
-                    style: TextStyle(
-                      fontSize: 50,
-                      color: ColorConstants.whiteColor,
-                      fontWeight: FontWeight.bold,
+                      'assets/ic_launcher.png',
+                      height: 250,
+                      width: 250,
                     ),
-                  ),
-                  Text(
-                    'Taste with comfort',
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: ColorConstants.whiteColor,
-                      fontWeight: FontWeight.normal,
-                    ),
-                  ),
-                  SizedBox(height: 40),
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: Text(
-                      'Sign Up',
+                    Text(
+                      'Minto',
                       style: TextStyle(
-                        fontSize: 30,
-                        color: ColorConstants.whiteColor.withOpacity(0.8),
-                        fontWeight: FontWeight.w300,
-                      ),
-                    ),
-                  ),
-                  SizedBox(height: 20),
-                  KLoginTextForm('Name', controller.state.name),
-                  SizedBox(height: 10),
-                  KLoginTextForm('Email', controller.state.email),
-                  SizedBox(height: 10),
-                  KLoginTextForm('Password', controller.state.password),
-                  SizedBox(height: 40),
-                  ElevatedButton(
-                    onPressed: () async => controller.SignUp(),
-                    child: Text(
-                      'Register',
-                      style: TextStyle(
-                        color: ColorConstants.blackColor,
-                        fontSize: 28,
+                        fontSize: 50,
+                        color: ColorConstants.whiteColor,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    style: ElevatedButton.styleFrom(
-                        fixedSize: Size(Get.width / 2, 70),
-                        backgroundColor: ColorConstants.yellowColor,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20))),
-                  ),
-                  SizedBox(height: 20),
-                  Text.rich(TextSpan(
-                      text: 'Already have an account? ',
+                    Text(
+                      'Taste with comfort',
                       style: TextStyle(
+                        fontSize: 20,
                         color: ColorConstants.whiteColor,
+                        fontWeight: FontWeight.normal,
                       ),
-                      children: [
-                        TextSpan(
-                            text: 'Login',
-                            recognizer: TapGestureRecognizer()
-                              ..onTap = () =>
-                                  Get.offAllNamed(AppRouteNames.LOGIN_PAGE),
-                            style: TextStyle(
+                    ),
+                    SizedBox(height: 40),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        'Sign Up',
+                        style: TextStyle(
+                          fontSize: 30,
+                          color: ColorConstants.whiteColor.withOpacity(0.8),
+                          fontWeight: FontWeight.w300,
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 20),
+                    KLoginTextForm('Name', controller.state.name),
+                    SizedBox(height: 10),
+                    KLoginTextForm('Email', controller.state.email),
+                    SizedBox(height: 10),
+                    KLoginTextForm('Password', controller.state.password),
+                    SizedBox(height: 40),
+                    controller.state.isLoading.value
+                        ? SizedBox(
+                            height: 70,
+                            width: 70,
+                            child: CircularProgressIndicator(
                               color: ColorConstants.yellowColor,
-                            ))
-                      ])),
-                  SizedBox(height: 20),
-                ],
-              ),
+                            ),
+                          )
+                        : ElevatedButton(
+                            onPressed: () async => controller.SignUp(),
+                            child: Text(
+                              'Register',
+                              style: TextStyle(
+                                color: ColorConstants.blackColor,
+                                fontSize: 28,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            style: ElevatedButton.styleFrom(
+                                fixedSize: Size(Get.width / 2, 70),
+                                backgroundColor: ColorConstants.yellowColor,
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20))),
+                          ),
+                    SizedBox(height: 20),
+                    Text.rich(TextSpan(
+                        text: 'Already have an account? ',
+                        style: TextStyle(
+                          color: ColorConstants.whiteColor,
+                        ),
+                        children: [
+                          TextSpan(
+                              text: 'Login',
+                              recognizer: TapGestureRecognizer()
+                                ..onTap = () =>
+                                    Get.offAllNamed(AppRouteNames.LOGIN_PAGE),
+                              style: TextStyle(
+                                color: ColorConstants.yellowColor,
+                              ))
+                        ])),
+                    SizedBox(height: 20),
+                  ],
+                );
+              }),
             ),
           ),
         ),

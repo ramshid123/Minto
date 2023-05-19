@@ -14,6 +14,7 @@ class LoginPageController extends GetxController {
 
   Future login() async {
     if (state.formkey.currentState!.validate()) {
+      state.isLoading.value = true;
       final sf = await SharedPreferences.getInstance();
 
       try {
@@ -45,14 +46,18 @@ class LoginPageController extends GetxController {
         await sf.setString(SharedPrefStrings.NAME, '');
         await sf.setBool(SharedPrefStrings.ISADMIN, false);
 
-        Get.showSnackbar(GetSnackBar(
-          title: 'Oh Oh!',
-          message: e.toString().substring(
-              e.toString().indexOf('/') + 1, e.toString().indexOf(']')),
-          duration: 5000.milliseconds,
-        ));
+        Get.showSnackbar(
+          GetSnackBar(
+            title: 'Oh Oh!',
+            message: e.toString().substring(
+                e.toString().indexOf('/') + 1, e.toString().indexOf(']')),
+            duration: 5000.milliseconds,
+          ),
+        );
       } catch (e) {
         print(e);
+      } finally {
+        state.isLoading.value = false;
       }
     }
   }

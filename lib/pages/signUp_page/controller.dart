@@ -14,14 +14,10 @@ class SignUpPageController extends GetxController {
 
   Future SignUp() async {
     if (state.formkey.currentState!.validate()) {
+      state.isLoading.value = true;
       final sf = await SharedPreferences.getInstance();
 
       try {
-        // final userInfoSnapshot = await DatabaseService.userCollection
-        //     .where('email', isEqualTo: state.email.text.trim())
-        //     .get();
-        // final userInfo = userInfoSnapshot.docs.single.data();
-
         await AuthService()
             .createUser(state.email.text.trim(), state.password.text.trim());
         final newDoc = DatabaseService.userCollection.doc();
@@ -52,6 +48,8 @@ class SignUpPageController extends GetxController {
         ));
       } catch (e) {
         print(e);
+      } finally {
+        state.isLoading.value = false;
       }
     }
   }

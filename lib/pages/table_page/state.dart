@@ -6,5 +6,6 @@ class TablePageState {
   var peopleNumberSelectButtonIndex = 0.obs;
 
   Query<Map<String, dynamic>> query =
-      DatabaseService.TableCollection.where('max', isEqualTo: '2').orderBy('index');
+      DatabaseService.TableCollection.where('max', isEqualTo: '2')
+          .orderBy('index');
 }

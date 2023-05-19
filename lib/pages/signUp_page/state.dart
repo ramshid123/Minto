@@ -7,4 +7,6 @@ class SignUpPageState {
   var email = TextEditingController();
   var password = TextEditingController();
   var name = TextEditingController();
+
+  var isLoading = false.obs;
 }
