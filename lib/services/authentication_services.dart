@@ -8,7 +8,7 @@ class AuthService {
   static final auth = FirebaseAuth.instance;
 
   void changeForAuthChange() async {
-    await Future.delayed(2.seconds);
+    await Future.delayed(3.seconds);
     final sf = await SharedPreferences.getInstance();
     AuthService.auth.authStateChanges().listen((event) async {
       if (event == null) {

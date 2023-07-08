@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:minto/constants/color_constants.dart';
 import 'package:minto/pages/order_complete/controller.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:rive/rive.dart';
 
 class OrderCompletePage extends GetView<OrderCompletePageController> {
   const OrderCompletePage({super.key});
@@ -18,59 +20,57 @@ class OrderCompletePage extends GetView<OrderCompletePageController> {
       },
       child: Scaffold(
         backgroundColor: ColorConstants.blackColor,
-        body: SafeArea(
-          child: SizedBox(
-            width: Get.width,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text(
-                  'Order Placed Successfully',
+        body: Center(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              SizedBox(
+                  height: 300.h,
+                  width: 300.w,
+                  child: RiveAnimation.asset(
+                    'assets/food_anim.riv',
+                  )),
+              ElevatedButton(
+                onPressed: () async => controller.freeTheSeat(),
+                child: Text(
+                  'Free the seat',
                   style: TextStyle(
-                    color: ColorConstants.whiteColor,
-                    fontSize: 27,
+                    color: ColorConstants.blackColor,
+                    fontSize: 25.sp,
                   ),
-                ).animate().fadeIn(duration: 1500.ms).moveY(
-                    begin: 20, duration: 1500.ms, curve: Curves.easeInOut),
-                SizedBox(height: 100),
-                Text(
-                  'When you had your meal..',
-                  style: TextStyle(
-                    color: ColorConstants.whiteColor,
-                    fontSize: 22,
-                  ),
-                ).animate().fadeIn(duration: 1500.ms, delay: 1500.ms).moveY(
-                    begin: 20,
-                    duration: 1500.ms,
-                    curve: Curves.easeInOut,
-                    delay: 1500.ms),
-                SizedBox(height: 40),
-                ElevatedButton(
-                  onPressed: () async => controller.freeTheSeat(),
-                  child: Text(
-                    'Free the seat',
-                    style: TextStyle(
-                      color: ColorConstants.blackColor,
-                      fontSize: 25,
-                    ),
-                  ),
-                  style: ElevatedButton.styleFrom(
-                      backgroundColor: ColorConstants.yellowColor,
-                      foregroundColor: ColorConstants.blackColor,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(25)),
-                      fixedSize: Size(200, 80)),
-                ).animate().fadeIn(duration: 1500.ms, delay: 3000.ms).moveY(
-                    begin: 20,
-                    duration: 1500.ms,
-                    curve: Curves.easeInOut,
-                    delay: 3000.ms),
-              ],
-            ),
+                ),
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: ColorConstants.yellowColor,
+                    foregroundColor: ColorConstants.blackColor,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(25.r)),
+                    fixedSize: Size(200.w, 80.h)),
+              ).animate(onPlay: (controller) {
+                controller.repeat();
+                controller.loop();
+              }).flipV(begin: 0, end: 2, delay: 5000.ms, duration: 500.ms)
+            ],
           ),
         ),
       ),
     );
   }
 }
+
+
+// ElevatedButton(
+//                   onPressed: () async => controller.freeTheSeat(),
+//                   child: Text(
+//                     'Free the seat',
+//                     style: TextStyle(
+//                       color: ColorConstants.blackColor,
+//                       fontSize: 25,
+//                     ),
+//                   ),
+//                   style: ElevatedButton.styleFrom(
+//                       backgroundColor: ColorConstants.yellowColor,
+//                       foregroundColor: ColorConstants.blackColor,
+//                       shape: RoundedRectangleBorder(
+//                           borderRadius: BorderRadius.circular(25)),
+//                       fixedSize: Size(200, 80)),
+//                 )

@@ -3,8 +3,8 @@ import 'package:minto/pages/home_page/homepage_index.dart';
 import 'package:minto/pages/item_page/itempage_index.dart';
 import 'package:minto/pages/order_complete/ordercompletepage_index.dart';
 import 'package:minto/pages/signUp_page/signuppage_index.dart';
-import 'package:minto/pages/splash_screen/splashscreen_index.dart';
 import 'package:minto/pages/signIn_page/loginpage_index.dart';
+import 'package:minto/pages/splash_screen/view.dart';
 import 'package:minto/pages/table_page/tablepage_index.dart';
 
 import 'names.dart';
@@ -44,7 +44,6 @@ class AppRoutes {
     GetPage(
       name: AppRouteNames.SPLASH_SCREEN,
       page: () => SplashScreen(),
-      binding: SplashScreenBinding(),
     ),
   ];
 }

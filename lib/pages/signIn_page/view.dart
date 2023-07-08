@@ -2,6 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:minto/pages/signIn_page/controller.dart';
@@ -17,7 +18,7 @@ class LoginPage extends GetView<LoginPageController> {
       backgroundColor: ColorConstants.blackColor,
       body: SafeArea(
         child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 30),
+          padding: EdgeInsets.symmetric(horizontal: 30.w),
           width: Get.width,
           child: SingleChildScrollView(
             child: Form(
@@ -26,16 +27,16 @@ class LoginPage extends GetView<LoginPageController> {
                 return Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    SizedBox(height: 50),
+                    SizedBox(height: 50.h),
                     Image.asset(
                       'assets/ic_launcher.png',
-                      height: 250,
-                      width: 250,
+                      height: 250.h,
+                      width: 250.w,
                     ),
                     Text(
                       'Minto',
                       style: TextStyle(
-                        fontSize: 50,
+                        fontSize: 50.sp,
                         color: ColorConstants.whiteColor,
                         fontWeight: FontWeight.bold,
                       ),
@@ -43,32 +44,32 @@ class LoginPage extends GetView<LoginPageController> {
                     Text(
                       'Taste with comfort',
                       style: TextStyle(
-                        fontSize: 20,
+                        fontSize: 20.sp,
                         color: ColorConstants.whiteColor,
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                    SizedBox(height: 40),
+                    SizedBox(height: 40.h),
                     Align(
                       alignment: Alignment.centerLeft,
                       child: Text(
                         'Sign In',
                         style: TextStyle(
-                          fontSize: 30,
+                          fontSize: 30.sp,
                           color: ColorConstants.whiteColor.withOpacity(0.8),
                           fontWeight: FontWeight.w300,
                         ),
                       ),
                     ),
-                    SizedBox(height: 20),
+                    SizedBox(height: 20.h),
                     KLoginTextForm('Email', controller.state.email),
-                    SizedBox(height: 10),
+                    SizedBox(height: 10.h),
                     KLoginTextForm('Password', controller.state.password),
-                    SizedBox(height: 40),
+                    SizedBox(height: 40.h),
                     controller.state.isLoading.value
                         ? SizedBox(
-                            height: 70,
-                            width: 70,
+                            height: 70.h,
+                            width: 70.w,
                             child: CircularProgressIndicator(
                               color: ColorConstants.yellowColor,
                             ),
@@ -79,17 +80,17 @@ class LoginPage extends GetView<LoginPageController> {
                               'Login',
                               style: TextStyle(
                                 color: ColorConstants.blackColor,
-                                fontSize: 28,
+                                fontSize: 28.sp,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
                             style: ElevatedButton.styleFrom(
-                                fixedSize: Size(Get.width / 2, 70),
+                                fixedSize: Size(Get.width / 2, 70.h),
                                 backgroundColor: ColorConstants.yellowColor,
                                 shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(20))),
+                                    borderRadius: BorderRadius.circular(20.r))),
                           ),
-                    SizedBox(height: 20),
+                    SizedBox(height: 20.h),
                     Text.rich(TextSpan(
                         text: 'Are you new here? ',
                         style: TextStyle(
@@ -105,7 +106,7 @@ class LoginPage extends GetView<LoginPageController> {
                                 color: ColorConstants.yellowColor,
                               ))
                         ])),
-                    SizedBox(height: 20),
+                    SizedBox(height: 20.h),
                   ],
                 );
               }),
@@ -127,9 +128,9 @@ Widget KLoginTextForm(String hint, TextEditingController ctrl) {
     decoration: InputDecoration(
       filled: true,
       fillColor: ColorConstants.greyColor,
-      border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
+      border: OutlineInputBorder(borderRadius: BorderRadius.circular(15.r)),
       focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(15),
+          borderRadius: BorderRadius.circular(15.r),
           borderSide: BorderSide(
             color: ColorConstants.yellowColor,
           )),

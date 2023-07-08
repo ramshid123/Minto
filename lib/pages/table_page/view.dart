@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:minto/constants/color_constants.dart';
 import 'package:get/get.dart';
 import 'package:minto/pages/table_page/controller.dart';
@@ -17,10 +18,10 @@ class TablePage extends GetView<TablePageController> {
         child: SingleChildScrollView(
           child: Obx(() {
             return Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20),
+              padding: EdgeInsets.symmetric(horizontal: 20.w),
               child: Column(
                 children: [
-                  SizedBox(height: 50),
+                  SizedBox(height: 50.h),
                   Align(
                     alignment: Alignment.centerLeft,
                     child: RichText(
@@ -33,7 +34,7 @@ class TablePage extends GetView<TablePageController> {
                                   TextStyle(color: ColorConstants.yellowColor)),
                         ],
                         style: TextStyle(
-                          fontSize: 30,
+                          fontSize: 30.sp,
                           letterSpacing: 1,
                           color: ColorConstants.whiteColor,
                           fontWeight: FontWeight.w400,
@@ -41,7 +42,7 @@ class TablePage extends GetView<TablePageController> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 30),
+                  SizedBox(height: 30.h),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -53,10 +54,10 @@ class TablePage extends GetView<TablePageController> {
                           controller: controller, index: 2, number: 8),
                     ],
                   ),
-                  SizedBox(height: 30),
+                  SizedBox(height: 30.h),
                   controller.state.peopleNumberSelectButtonIndex.value == 0
                       ? SizedBox(
-                          height: Get.height - 300,
+                          height: Get.height - 300.h,
                           child: FirestoreListView(
                             physics: BouncingScrollPhysics(),
                             pageSize: 4,
@@ -78,7 +79,7 @@ class TablePage extends GetView<TablePageController> {
                       : (controller.state.peopleNumberSelectButtonIndex.value ==
                               1
                           ? SizedBox(
-                              height: Get.height - 300,
+                              height: Get.height - 300.h,
                               child: FirestoreListView(
                                 physics: BouncingScrollPhysics(),
                                 pageSize: 4,
@@ -98,7 +99,7 @@ class TablePage extends GetView<TablePageController> {
                               ),
                             )
                           : SizedBox(
-                              height: Get.height - 300,
+                              height: Get.height - 300.h,
                               width: Get.width,
                               child: FirestoreListView(
                                 physics: BouncingScrollPhysics(),
@@ -138,10 +139,10 @@ Widget KPeopleNumberButton(
           controller.changePeopleNumberButtonIndex(index: index, max: number),
       child: Text(
         '$number Seat',
-        style: TextStyle(fontSize: 17),
+        style: TextStyle(fontSize: 17.sp),
       ),
       style: ElevatedButton.styleFrom(
-        fixedSize: Size((Get.width / 3) - 20, 50),
+        fixedSize: Size((Get.width / 3) - 20.w, 50.h),
         backgroundColor:
             controller.state.peopleNumberSelectButtonIndex.value == index
                 ? ColorConstants.yellowColor
@@ -151,7 +152,7 @@ Widget KPeopleNumberButton(
                 ? ColorConstants.blackColor
                 : ColorConstants.whiteColor,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(20.r),
         ),
       ),
     );
@@ -165,14 +166,14 @@ Widget KTable2People(
     required int takenSeats,
     required BuildContext context}) {
   return Padding(
-    padding: EdgeInsets.symmetric(vertical: 30),
+    padding: EdgeInsets.symmetric(vertical: 30.h),
     child: Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
           margin: EdgeInsets.all(10),
-          height: 60,
-          width: 60,
+          height: 60.h,
+          width: 60.w,
           decoration: BoxDecoration(
               color: takenSeats >= 1
                   ? ColorConstants.yellowColor
@@ -180,27 +181,27 @@ Widget KTable2People(
               shape: BoxShape.circle,
               border: Border.all(
                 color: ColorConstants.yellowColor,
-                width: 1,
+                width: 1.w,
               )),
         ),
         GestureDetector(
           onTap: () => controller.selectTableAndGoToHomePage(
               index: number, isAvailable: isAvailable, context: context),
           child: Container(
-            height: 130,
-            width: 130,
+            height: 130.h,
+            width: 130.w,
             decoration: BoxDecoration(
               color: isAvailable
                   ? ColorConstants.greyColor
                   : ColorConstants.yellowColor,
-              borderRadius: BorderRadius.circular(50),
-              border: Border.all(color: ColorConstants.yellowColor, width: 2),
+              borderRadius: BorderRadius.circular(50.r),
+              border: Border.all(color: ColorConstants.yellowColor, width: 2.w),
             ),
             child: Center(
               child: Text(
                 number.toString(),
                 style: TextStyle(
-                  fontSize: 40,
+                  fontSize: 40.sp,
                   fontWeight: FontWeight.bold,
                   color: isAvailable
                       ? ColorConstants.whiteColor
@@ -212,8 +213,8 @@ Widget KTable2People(
         ),
         Container(
           margin: EdgeInsets.all(10),
-          height: 60,
-          width: 60,
+          height: 60.h,
+          width: 60.w,
           decoration: BoxDecoration(
               color: takenSeats >= 2
                   ? ColorConstants.yellowColor
@@ -221,7 +222,7 @@ Widget KTable2People(
               shape: BoxShape.circle,
               border: Border.all(
                 color: ColorConstants.yellowColor,
-                width: 1,
+                width: 1.w,
               )),
         ),
       ],
@@ -236,8 +237,8 @@ Widget KTable4People(
     required int takenSeats,
     required bool isAvailable}) {
   return Container(
-    margin: EdgeInsets.symmetric(vertical: 30),
-    width: 140,
+    margin: EdgeInsets.symmetric(vertical: 30.h),
+    width: 140.w,
     child: Column(
       children: [
         Row(
@@ -245,8 +246,8 @@ Widget KTable4People(
           children: [
             Container(
               margin: EdgeInsets.all(10),
-              height: 60,
-              width: 60,
+              height: 60.h,
+              width: 60.w,
               decoration: BoxDecoration(
                   color: takenSeats >= 1
                       ? ColorConstants.yellowColor
@@ -254,13 +255,13 @@ Widget KTable4People(
                   shape: BoxShape.circle,
                   border: Border.all(
                     color: ColorConstants.yellowColor,
-                    width: 1,
+                    width: 1.w,
                   )),
             ),
             Container(
               margin: EdgeInsets.all(10),
-              height: 60,
-              width: 60,
+              height: 60.h,
+              width: 60.w,
               decoration: BoxDecoration(
                   color: takenSeats >= 2
                       ? ColorConstants.yellowColor
@@ -268,7 +269,7 @@ Widget KTable4People(
                   shape: BoxShape.circle,
                   border: Border.all(
                     color: ColorConstants.yellowColor,
-                    width: 1,
+                    width: 1.w,
                   )),
             ),
           ],
@@ -277,20 +278,20 @@ Widget KTable4People(
           onTap: () => controller.selectTableAndGoToHomePage(
               index: number, isAvailable: isAvailable, context: context),
           child: Container(
-            height: 150,
-            width: 190,
+            height: 150.h,
+            width: 190.w,
             decoration: BoxDecoration(
               color: isAvailable
                   ? ColorConstants.greyColor
                   : ColorConstants.yellowColor,
-              borderRadius: BorderRadius.circular(10),
-              border: Border.all(color: ColorConstants.yellowColor, width: 2),
+              borderRadius: BorderRadius.circular(10.r),
+              border: Border.all(color: ColorConstants.yellowColor, width: 2.w),
             ),
             child: Center(
               child: Text(
                 number.toString(),
                 style: TextStyle(
-                  fontSize: 40,
+                  fontSize: 40.sp,
                   fontWeight: FontWeight.bold,
                   color: isAvailable
                       ? ColorConstants.whiteColor
@@ -305,8 +306,8 @@ Widget KTable4People(
           children: [
             Container(
               margin: EdgeInsets.all(10),
-              height: 60,
-              width: 60,
+              height: 60.h,
+              width: 60.w,
               decoration: BoxDecoration(
                   color: takenSeats >= 3
                       ? ColorConstants.yellowColor
@@ -314,13 +315,13 @@ Widget KTable4People(
                   shape: BoxShape.circle,
                   border: Border.all(
                     color: ColorConstants.yellowColor,
-                    width: 1,
+                    width: 1.w,
                   )),
             ),
             Container(
               margin: EdgeInsets.all(10),
-              height: 60,
-              width: 60,
+              height: 60.h,
+              width: 60.w,
               decoration: BoxDecoration(
                   color: takenSeats >= 4
                       ? ColorConstants.yellowColor
@@ -328,7 +329,7 @@ Widget KTable4People(
                   shape: BoxShape.circle,
                   border: Border.all(
                     color: ColorConstants.yellowColor,
-                    width: 1,
+                    width: 1.w,
                   )),
             ),
           ],
@@ -345,18 +346,18 @@ Widget KTable8People(
     required BuildContext context,
     required bool isAvailable}) {
   return Container(
-    margin: EdgeInsets.symmetric(vertical: 30),
-    width: 300,
-    height: 300,
+    margin: EdgeInsets.symmetric(vertical: 30.h),
+    width: 300.w,
+    height: 300.h,
     child: Column(
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-              margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-              height: 40,
-              width: 40,
+              margin: EdgeInsets.symmetric(vertical: 10.h, horizontal: 20.w),
+              height: 40.h,
+              width: 40.w,
               decoration: BoxDecoration(
                   color: takenSeats >= 1
                       ? ColorConstants.yellowColor
@@ -364,13 +365,13 @@ Widget KTable8People(
                   shape: BoxShape.circle,
                   border: Border.all(
                     color: ColorConstants.yellowColor,
-                    width: 1,
+                    width: 1.w,
                   )),
             ),
             Container(
-              margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-              height: 40,
-              width: 40,
+              margin: EdgeInsets.symmetric(vertical: 10.h, horizontal: 20.w),
+              height: 40.h,
+              width: 40.w,
               decoration: BoxDecoration(
                   color: takenSeats >= 2
                       ? ColorConstants.yellowColor
@@ -378,7 +379,7 @@ Widget KTable8People(
                   shape: BoxShape.circle,
                   border: Border.all(
                     color: ColorConstants.yellowColor,
-                    width: 1,
+                    width: 1.w,
                   )),
             ),
           ],
@@ -389,9 +390,10 @@ Widget KTable8People(
             Column(
               children: [
                 Container(
-                  margin: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
-                  height: 40,
-                  width: 40,
+                  margin:
+                      EdgeInsets.symmetric(vertical: 20.h, horizontal: 10.w),
+                  height: 40.h,
+                  width: 40.w,
                   decoration: BoxDecoration(
                       color: takenSeats >= 3
                           ? ColorConstants.yellowColor
@@ -399,13 +401,14 @@ Widget KTable8People(
                       shape: BoxShape.circle,
                       border: Border.all(
                         color: ColorConstants.yellowColor,
-                        width: 1,
+                        width: 1.w,
                       )),
                 ),
                 Container(
-                  margin: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
-                  height: 40,
-                  width: 40,
+                  margin:
+                      EdgeInsets.symmetric(vertical: 20.h, horizontal: 10.w),
+                  height: 40.h,
+                  width: 40.w,
                   decoration: BoxDecoration(
                       color: takenSeats >= 4
                           ? ColorConstants.yellowColor
@@ -413,7 +416,7 @@ Widget KTable8People(
                       shape: BoxShape.circle,
                       border: Border.all(
                         color: ColorConstants.yellowColor,
-                        width: 1,
+                        width: 1.w,
                       )),
                 ),
               ],
@@ -422,12 +425,12 @@ Widget KTable8People(
               onTap: () => controller.selectTableAndGoToHomePage(
                   index: number, isAvailable: isAvailable, context: context),
               child: Container(
-                height: 180,
-                width: 180,
+                height: 180.h,
+                width: 180.w,
                 decoration: BoxDecoration(
                   border:
-                      Border.all(color: ColorConstants.yellowColor, width: 2),
-                  borderRadius: BorderRadius.circular(50),
+                      Border.all(color: ColorConstants.yellowColor, width: 2.w),
+                  borderRadius: BorderRadius.circular(50.r),
                   color: isAvailable
                       ? ColorConstants.greyColor
                       : ColorConstants.yellowColor,
@@ -436,7 +439,7 @@ Widget KTable8People(
                   child: Text(
                     number.toString(),
                     style: TextStyle(
-                      fontSize: 70,
+                      fontSize: 70.sp,
                       fontWeight: FontWeight.bold,
                       color: isAvailable
                           ? ColorConstants.whiteColor
@@ -449,9 +452,10 @@ Widget KTable8People(
             Column(
               children: [
                 Container(
-                  margin: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
-                  height: 40,
-                  width: 40,
+                  margin:
+                      EdgeInsets.symmetric(vertical: 20.h, horizontal: 10.w),
+                  height: 40.h,
+                  width: 40.w,
                   decoration: BoxDecoration(
                       color: takenSeats >= 5
                           ? ColorConstants.yellowColor
@@ -459,13 +463,14 @@ Widget KTable8People(
                       shape: BoxShape.circle,
                       border: Border.all(
                         color: ColorConstants.yellowColor,
-                        width: 1,
+                        width: 1.w,
                       )),
                 ),
                 Container(
-                  margin: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
-                  height: 40,
-                  width: 40,
+                  margin:
+                      EdgeInsets.symmetric(vertical: 20.h, horizontal: 10.w),
+                  height: 40.h,
+                  width: 40.w,
                   decoration: BoxDecoration(
                       color: takenSeats >= 6
                           ? ColorConstants.yellowColor
@@ -473,7 +478,7 @@ Widget KTable8People(
                       shape: BoxShape.circle,
                       border: Border.all(
                         color: ColorConstants.yellowColor,
-                        width: 1,
+                        width: 1.w,
                       )),
                 ),
               ],
@@ -484,9 +489,9 @@ Widget KTable8People(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-              margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-              height: 40,
-              width: 40,
+              margin: EdgeInsets.symmetric(vertical: 10.h, horizontal: 20.w),
+              height: 40.h,
+              width: 40.w,
               decoration: BoxDecoration(
                   color: takenSeats >= 7
                       ? ColorConstants.yellowColor
@@ -494,13 +499,13 @@ Widget KTable8People(
                   shape: BoxShape.circle,
                   border: Border.all(
                     color: ColorConstants.yellowColor,
-                    width: 1,
+                    width: 1.w,
                   )),
             ),
             Container(
-              margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-              height: 40,
-              width: 40,
+              margin: EdgeInsets.symmetric(vertical: 10.h, horizontal: 20.w),
+              height: 40.h,
+              width: 40.w,
               decoration: BoxDecoration(
                   color: takenSeats >= 8
                       ? ColorConstants.yellowColor
@@ -508,7 +513,7 @@ Widget KTable8People(
                   shape: BoxShape.circle,
                   border: Border.all(
                     color: ColorConstants.yellowColor,
-                    width: 1,
+                    width: 1.w,
                   )),
             ),
           ],

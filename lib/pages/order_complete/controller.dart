@@ -5,7 +5,6 @@ import 'ordercompletepage_index.dart';
 
 class OrderCompletePageController extends GetxController {
   OrderCompletePageController();
-  final state = OrderCompletePageState();
 
   Future freeTheSeat() async {
     try {

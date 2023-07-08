@@ -7,161 +7,161 @@ class HomePageState {
   var demoItems = [
     [
       [
-        'Chicago Burger',
-        'https://th.bing.com/th/id/R.499730dad10f4420b1ea5ed25b300dd2?rik=3KHG0w%2bUYI2BFA&riu=http%3a%2f%2fwww.pngmart.com%2ffiles%2f16%2fClassic-Cheese-Burger-PNG-Transparent-Image.png&ehk=CvfKhtpoVqrAzT2qJZnRFAYBhpZme%2fPyzO4ICPNJ0A0%3d&risl=&pid=ImgRaw&r=0',
+        'Cheese Burger',
+        'https://th.bing.com/th/id/R.f1143c65fed962eb2335a53ef66dc8f3?rik=Rjj0gCtyr1B%2f6Q&riu=http%3a%2f%2fclipart-library.com%2fimages_k%2fburger-transparent%2fburger-transparent-8.png&ehk=%2fzCrhdqli0Q4wsDIEP5ll6yM6yuoIjz8VLZBSmhneII%3d&risl=1&pid=ImgRaw&r=0',
         '50'
       ],
       [
-        'Italizan Burger',
-        'https://th.bing.com/th/id/R.499730dad10f4420b1ea5ed25b300dd2?rik=3KHG0w%2bUYI2BFA&riu=http%3a%2f%2fwww.pngmart.com%2ffiles%2f16%2fClassic-Cheese-Burger-PNG-Transparent-Image.png&ehk=CvfKhtpoVqrAzT2qJZnRFAYBhpZme%2fPyzO4ICPNJ0A0%3d&risl=&pid=ImgRaw&r=0',
+        'Hamburger',
+        'https://th.bing.com/th/id/R.66ea739319a660a2a29e23210761bbfa?rik=MEbr1MYORAWtng&riu=http%3a%2f%2fclipart-library.com%2fimages_k%2ftransparent-burger%2ftransparent-burger-11.png&ehk=3WHXW0Sx%2bw%2fnbKQip8xzl30snH5NTxMuTmN4CVoDfuA%3d&risl=&pid=ImgRaw&r=0',
         '20'
       ],
       [
-        'California Burger',
-        'https://th.bing.com/th/id/R.499730dad10f4420b1ea5ed25b300dd2?rik=3KHG0w%2bUYI2BFA&riu=http%3a%2f%2fwww.pngmart.com%2ffiles%2f16%2fClassic-Cheese-Burger-PNG-Transparent-Image.png&ehk=CvfKhtpoVqrAzT2qJZnRFAYBhpZme%2fPyzO4ICPNJ0A0%3d&risl=&pid=ImgRaw&r=0',
+        'Turkey Burger',
+        'https://localbiggerburger.com/wp-content/uploads/2019/10/14-144474_turkey-burger-clipart-burger-with-no-background.png',
         '70'
       ],
       [
-        'Chicago Burger',
-        'https://th.bing.com/th/id/R.499730dad10f4420b1ea5ed25b300dd2?rik=3KHG0w%2bUYI2BFA&riu=http%3a%2f%2fwww.pngmart.com%2ffiles%2f16%2fClassic-Cheese-Burger-PNG-Transparent-Image.png&ehk=CvfKhtpoVqrAzT2qJZnRFAYBhpZme%2fPyzO4ICPNJ0A0%3d&risl=&pid=ImgRaw&r=0',
+        'Veggie Burger',
+        'https://jloog.com/images/veggie-burger-clipart-transparent-food-2.png',
         '100'
       ],
       [
-        'Italizan Burger',
-        'https://th.bing.com/th/id/R.499730dad10f4420b1ea5ed25b300dd2?rik=3KHG0w%2bUYI2BFA&riu=http%3a%2f%2fwww.pngmart.com%2ffiles%2f16%2fClassic-Cheese-Burger-PNG-Transparent-Image.png&ehk=CvfKhtpoVqrAzT2qJZnRFAYBhpZme%2fPyzO4ICPNJ0A0%3d&risl=&pid=ImgRaw&r=0',
+        'Bean Burger',
+        'https://www.burgerking.com.tr/cmsfiles/categories/bean-burger.png?v=176',
         '30'
       ],
       [
-        'California Burger',
-        'https://th.bing.com/th/id/R.499730dad10f4420b1ea5ed25b300dd2?rik=3KHG0w%2bUYI2BFA&riu=http%3a%2f%2fwww.pngmart.com%2ffiles%2f16%2fClassic-Cheese-Burger-PNG-Transparent-Image.png&ehk=CvfKhtpoVqrAzT2qJZnRFAYBhpZme%2fPyzO4ICPNJ0A0%3d&risl=&pid=ImgRaw&r=0',
+        'Chicken Burger',
+        'https://th.bing.com/th/id/R.5bdcdb08c533a53cde3be5ba074bb5fb?rik=903CPBsTuFwMfQ&riu=http%3a%2f%2fassets.stickpng.com%2fimages%2f58824b33e81acb96424ffab9.png&ehk=TDBZNFKp0B%2bGSLFK7mUy4a7%2fb5LI%2fbVSHOvYjXgDZXw%3d&risl=&pid=ImgRaw&r=0',
         '100'
       ],
     ],
     [
       [
-        'Chicago Drink',
-        'https://pngimg.com/uploads/cocktail/cocktail_PNG54.png',
+        'Mango Drink',
+        'https://www.pngarts.com/files/4/Juice-PNG-Image-Background.png',
         '20'
       ],
       [
-        'Italizan Drink',
-        'https://pngimg.com/uploads/cocktail/cocktail_PNG54.png',
+        'Watermelon Cocktail',
+        'https://www.dekuyperusa.com/sites/default/files/component_recipes/images/watermelon-mai-tai.png',
         '40'
       ],
       [
-        'California Drink',
-        'https://pngimg.com/uploads/cocktail/cocktail_PNG54.png',
+        'Lemonade',
+        'https://purepng.com/public/uploads/medium/purepng.com-lemonade-drinklemonadedrinksoft-drinklemonlemon-drink-551521126482bgdoq.png',
         '50'
       ],
       [
-        'Chicago Drink',
-        'https://pngimg.com/uploads/cocktail/cocktail_PNG54.png',
-        '100'
-      ],
-      [
-        'Italizan Drink',
-        'https://pngimg.com/uploads/cocktail/cocktail_PNG54.png',
+        'Avocado Shake',
+        'https://getthegrove.com/wp-content/uploads/2017/10/creamy-avocado.png',
         '50'
       ],
       [
-        'California Drink',
-        'https://pngimg.com/uploads/cocktail/cocktail_PNG54.png',
+        'Milk Shake',
+        'https://webstockreview.net/images/milkshake-clipart-strawberry-milkshake-19.png',
         '60'
+      ],
+      [
+        'Banana Shake',
+        'https://th.bing.com/th/id/R.9f04201c5914c72de061ae8d67f46c9a?rik=L4VBxPbxkIkOzw&riu=http%3a%2f%2fwww.pngmart.com%2ffiles%2f14%2fCreamy-Banana-Shake-PNG.png&ehk=xqBWl1JNaKNAS4%2f8GZBjvD5E7e4h3cXsDOjlrVc0KQg%3d&risl=&pid=ImgRaw&r=0',
+        '100'
       ],
     ],
     [
       [
-        'Chicago Pizza',
+        'California Pizza',
         'https://freepngimg.com/thumb/pizza/7-pizza-png-image.png',
         '100'
       ],
       [
-        'Italizan Pizza',
-        'https://freepngimg.com/thumb/pizza/7-pizza-png-image.png',
+        'Bagel Pizza',
+        'https://www.pngplay.com/wp-content/uploads/2/Top-View-Pizza-Transparent-File.png',
         '200'
       ],
       [
-        'California Pizza',
-        'https://freepngimg.com/thumb/pizza/7-pizza-png-image.png',
+        'Chicken Pizza',
+        'https://th.bing.com/th/id/R.f735929a718f6ada1f08ab34730fcf97?rik=%2fYq451%2fsTJv%2bHA&riu=http%3a%2f%2fclipart-library.com%2fimages_k%2fpizza-transparent-background%2fpizza-transparent-background-9.png&ehk=VLyqaYb8yrJM759ils61LXdgR9TjjcWeSQtXwcyzshg%3d&risl=1&pid=ImgRaw&r=0',
         '200'
       ],
       [
-        'Chicago Pizza',
-        'https://freepngimg.com/thumb/pizza/7-pizza-png-image.png',
+        'Brick Oven Pizza',
+        'https://th.bing.com/th/id/R.66acbd1dd5b8de9cb44f24a790621c6a?rik=5R0TPkBfpLMpww&riu=http%3a%2f%2fwww.pngplay.com%2fwp-content%2fuploads%2f2%2fTop-View-Pizza-Download-Free-PNG.png&ehk=6%2fXwtJi4GTPVFtwrUdDFpZPPLn2cp45ZTvynu1VRoi8%3d&risl=&pid=ImgRaw&r=0',
         '300'
       ],
       [
-        'Italizan Pizza',
-        'https://freepngimg.com/thumb/pizza/7-pizza-png-image.png',
+        'Neapolitan Pizza',
+        'https://pngimg.com/uploads/pizza/pizza_PNG7122.png',
         '100'
       ],
       [
-        'California Pizza',
-        'https://freepngimg.com/thumb/pizza/7-pizza-png-image.png',
+        'Sicilian Pizza',
+        'https://www.pngkit.com/png/full/4-41052_pizza-png.png',
         '100'
       ],
     ],
     [
       [
-        'Chicago Cake',
-        'https://pngimg.com/uploads/cake/cake_PNG13132.png',
+        'Chocolate Cake',
+        'https://pluspng.com/img-png/png-slice-of-cake--1326.png',
         '100'
       ],
       [
-        'Italizan Cake',
-        'https://pngimg.com/uploads/cake/cake_PNG13132.png',
+        'Strawberry Cake',
+        'https://pluspng.com/img-png/png-slice-of-cake-cheesecake-500.png',
         '400'
       ],
       [
-        'California Cake',
-        'https://pngimg.com/uploads/cake/cake_PNG13132.png',
+        'Crunch Cake',
+        'https://pluspng.com/img-png/png-slice-of-cake--700.png',
         '500'
       ],
       [
-        'Chicago Cake',
-        'https://pngimg.com/uploads/cake/cake_PNG13132.png',
+        'Cream Cake',
+        'https://pluspng.com/img-png/png-slice-of-cake-elizabeth-sponge-cake-400.png',
         '200'
       ],
       [
-        'Italizan Cake',
-        'https://pngimg.com/uploads/cake/cake_PNG13132.png',
+        'Vanila Cake',
+        'https://pluspng.com/img-png/slice-of-cake-png-hd--700.png',
         '100'
       ],
       [
-        'California Cake',
-        'https://pngimg.com/uploads/cake/cake_PNG13132.png',
+        'Mango Cake',
+        'https://pluspng.com/img-png/slice-of-cake-png-hd-png-slice-of-cake-pluspng-com-1680-png-slice-of-cake-1680.png',
         '100'
       ],
     ],
     [
       [
-        'Chicago Snacks',
-        'https://pngimg.com/uploads/potato_chips/potato_chips_PNG2.png',
+        'Samosa',
+        'https://www.pngkit.com/png/full/293-2934357_samosa-png.png',
         '10'
       ],
       [
-        'Italizan Snacks',
-        'https://pngimg.com/uploads/potato_chips/potato_chips_PNG2.png',
+        'Cutlet',
+        'https://th.bing.com/th/id/R.bb932afe4b4ef2b6fc8201b5cd932d2c?rik=qmilCCk0WxsC1g&riu=http%3a%2f%2fpngimg.com%2fuploads%2fcutlet%2fcutlet_PNG23.png&ehk=hS1z%2fPii9QKMZZCOGxa1lh5wc8Lt%2brFavjY%2fj05Q2to%3d&risl=&pid=ImgRaw&r=0',
         '20'
       ],
       [
-        'California Snacks',
-        'https://pngimg.com/uploads/potato_chips/potato_chips_PNG2.png',
+        'Pazham pori',
+        'https://mylocalindian.b-cdn.net/wp-content/uploads/2021/03/Pazham_banana_Pori-removebg-preview.png',
         '30'
       ],
       [
-        'Chicago Snacks',
+        'Potato Chips',
         'https://pngimg.com/uploads/potato_chips/potato_chips_PNG2.png',
         '10'
       ],
       [
-        'Italizan Snacks',
-        'https://pngimg.com/uploads/potato_chips/potato_chips_PNG2.png',
+        'Banana Chips',
+        'https://toppng.com/public/uploads/thumbnail/banana-chips-1156335805646jyye3gez.png',
         '10'
       ],
       [
-        'California Snacks',
-        'https://pngimg.com/uploads/potato_chips/potato_chips_PNG2.png',
+        'Bonda',
+        'https://modernasopalav.com/assets/images/recipe-image/bonda.png',
         '50'
       ],
     ],
